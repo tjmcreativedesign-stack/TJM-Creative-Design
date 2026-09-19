@@ -28,20 +28,37 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5,8,6,.94);
+    background: rgba(5,8,6,.96);
     border-bottom: 1px solid #222;
-    padding: 18px 7%;
+    padding: 10px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(10px);
 }
 
-.logo {
-    font-size: 22px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.brand img {
+    height: 58px;
+    width: 58px;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-name {
+    font-size: 20px;
     font-weight: 800;
+    letter-spacing: .4px;
+    white-space: nowrap;
 }
 
-.logo span {
+.brand-name span {
     color: #8cff00;
 }
 
@@ -49,36 +66,69 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #8cff00;
 }
 
 .hero {
-    min-height: 82vh;
+    min-height: 86vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
+    padding: 80px 7%;
+    position: relative;
+    overflow: hidden;
+
     background:
-        radial-gradient(circle at center, #173500 0%, #080a09 55%);
+        linear-gradient(
+            90deg,
+            rgba(5,8,6,.96) 0%,
+            rgba(5,8,6,.88) 32%,
+            rgba(5,8,6,.42) 58%,
+            rgba(5,8,6,.08) 100%
+        ),
+        url('ChatGPT Image Sep 19, 2026, 08_10_05 PM.png')
+        center center / cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(8,10,9,.62) 0%,
+            transparent 30%
+        );
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    max-width: 670px;
+    text-align: left;
 }
 
 .badge {
     display: inline-block;
     color: #8cff00;
     border: 1px solid #8cff00;
+    background: rgba(0,0,0,.36);
     border-radius: 50px;
     padding: 7px 16px;
     margin-bottom: 22px;
     font-weight: bold;
+    letter-spacing: .3px;
 }
 
 h1 {
-    font-size: clamp(45px, 8vw, 90px);
+    font-size: clamp(48px, 7vw, 88px);
     line-height: .95;
+    text-shadow: 0 4px 24px rgba(0,0,0,.6);
 }
 
 h1 span {
@@ -86,19 +136,25 @@ h1 span {
 }
 
 .hero p {
-    max-width: 700px;
-    margin: 25px auto;
-    color: #ccc;
+    max-width: 640px;
+    margin: 25px 0;
+    color: #e5e5e5;
     font-size: 19px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.8);
 }
 
 .button {
     display: inline-block;
-    margin: 8px;
+    margin: 8px 8px 8px 0;
     padding: 14px 25px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
 }
 
 .primary {
@@ -107,8 +163,9 @@ h1 span {
 }
 
 .secondary {
-    border: 1px solid #555;
+    border: 1px solid #777;
     color: white;
+    background: rgba(0,0,0,.3);
 }
 
 section {
@@ -145,6 +202,7 @@ section {
 .card:hover {
     transform: translateY(-6px);
     border-color: #8cff00;
+    box-shadow: 0 12px 30px rgba(140,255,0,.08);
 }
 
 .card h3 {
@@ -189,12 +247,49 @@ footer {
 }
 
 @media(max-width:700px) {
+
+    nav {
+        padding: 8px 18px;
+    }
+
+    .brand img {
+        height: 48px;
+        width: 48px;
+    }
+
+    .brand-name {
+        font-size: 15px;
+    }
+
     nav .links {
         display:none;
     }
 
+    .hero {
+        min-height: 78vh;
+        padding: 70px 20px;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5,8,6,.94) 0%,
+                rgba(5,8,6,.78) 52%,
+                rgba(5,8,6,.35) 100%
+            ),
+            url('ChatGPT Image Sep 19, 2026, 08_10_05 PM.png')
+            62% center / cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
     section {
-        padding:60px 20px;
+        padding: 60px 20px;
     }
 }
 </style>
@@ -203,19 +298,33 @@ footer {
 <body>
 
 <nav>
-    <div class="logo">TJM <span>CREATIVE DESIGN</span></div>
+
+    <div class="brand">
+        <img
+            src="TJM_Creative_Design_Logo.svg"
+            alt="TJM Creative Design logo"
+        >
+
+        <div class="brand-name">
+            TJM <span>CREATIVE DESIGN</span>
+        </div>
+    </div>
 
     <div class="links">
         <a href="#products">What We Make</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </div>
+
 </nav>
 
 <div class="hero">
+
     <div class="hero-content">
 
-        <div class="badge">PERSONALISED • DESIGNED • 3D PRINTED</div>
+        <div class="badge">
+            PERSONALISED • DESIGNED • 3D PRINTED
+        </div>
 
         <h1>
             BRINGING<br>
@@ -228,65 +337,97 @@ footer {
             TJM Creative Design.
         </p>
 
-        <a class="button primary" href="#products">
+        <a
+            class="button primary"
+            href="#products"
+        >
             Explore Our Creations
         </a>
 
-        <a class="button secondary" href="#contact">
+        <a
+            class="button secondary"
+            href="#contact"
+        >
             Custom Orders
         </a>
 
     </div>
+
 </div>
 
 <section id="products">
 
     <div class="section-title">
+
         <h2>What We Make</h2>
-        <p>Designed and created with personality.</p>
+
+        <p>
+            Designed and created with personality.
+        </p>
+
     </div>
 
     <div class="products">
 
         <div class="card">
+
             <h3>💡 Custom Lightboxes</h3>
+
             <p>
                 Personalised illuminated designs including football,
                 clubs, businesses and completely custom ideas.
             </p>
+
         </div>
 
         <div class="card">
+
             <h3>⚽ Personalised Designs</h3>
+
             <p>
                 Football benches, name designs, gifts and unique
                 personalised creations.
             </p>
+
         </div>
 
         <div class="card">
+
             <h3>🧩 Sensory & Fidgets</h3>
+
             <p>
                 Clickers, spinners, infinity cubes and fun sensory
                 products in a range of colours.
             </p>
+
         </div>
 
         <div class="card">
+
             <h3>✨ Signs & Gifts</h3>
+
             <p>
                 Bedroom signs, caravan signs, personalised gifts
                 and one-off creations.
             </p>
+
         </div>
 
     </div>
+
 </section>
 
-<section class="about" id="about">
+<section
+    class="about"
+    id="about"
+>
 
     <div class="section-title">
-        <h2>About TJM</h2>
+
+        <h2>
+            About TJM
+        </h2>
+
     </div>
 
     <p>
@@ -302,22 +443,31 @@ footer {
 
 </section>
 
-<section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact"
+>
 
-    <h2>Got an idea?</h2>
+    <h2>
+        Got an idea?
+    </h2>
 
     <p>
         Tell us what you'd like and let's see what we can create.
     </p>
 
-    <a class="button primary"
-       href="https://wa.me/447462780477">
-       WhatsApp TJM
+    <a
+        class="button primary"
+        href="https://wa.me/447462780477"
+    >
+        WhatsApp TJM
     </a>
 
-    <a class="button secondary"
-       href="https://www.facebook.com/profile.php?id=61581010230953">
-       Facebook
+    <a
+        class="button secondary"
+        href="https://www.facebook.com/profile.php?id=61581010230953"
+    >
+        Facebook
     </a>
 
 </section>
