@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TJM Creative Design | Bringing Ideas to Life</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080a09;
+    color: white;
+    line-height: 1.6;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5,8,6,.94);
+    border-bottom: 1px solid #222;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #8cff00;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background:
+        radial-gradient(circle at center, #173500 0%, #080a09 55%);
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.badge {
+    display: inline-block;
+    color: #8cff00;
+    border: 1px solid #8cff00;
+    border-radius: 50px;
+    padding: 7px 16px;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: .95;
+}
+
+h1 span {
+    color: #8cff00;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 25px auto;
+    color: #ccc;
+    font-size: 19px;
+}
+
+.button {
+    display: inline-block;
+    margin: 8px;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary {
+    background: #8cff00;
+    color: black;
+}
+
+.secondary {
+    border: 1px solid #555;
+    color: white;
+}
+
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+}
+
+.section-title p {
+    color: #aaa;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111411;
+    border: 1px solid #242824;
+    border-radius: 15px;
+    padding: 32px 25px;
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #8cff00;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #8cff00;
+}
+
+.card p {
+    color: #aaa;
+}
+
+.about {
+    background: #101310;
+    text-align: center;
+}
+
+.about p {
+    max-width: 760px;
+    margin: 20px auto;
+    color: #bbb;
+    font-size: 18px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 40px;
+}
+
+.contact p {
+    color: #aaa;
+    margin: 15px 0 25px;
+}
+
+footer {
+    border-top: 1px solid #222;
+    padding: 30px;
+    text-align: center;
+    color: #777;
+}
+
+@media(max-width:700px) {
+    nav .links {
+        display:none;
+    }
+
+    section {
+        padding:60px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">TJM <span>CREATIVE DESIGN</span></div>
+
+    <div class="links">
+        <a href="#products">What We Make</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+
+        <div class="badge">PERSONALISED • DESIGNED • 3D PRINTED</div>
+
+        <h1>
+            BRINGING<br>
+            <span>IDEAS TO LIFE.</span>
+        </h1>
+
+        <p>
+            Personalised 3D printed creations, sensory products,
+            custom lightboxes, signs and unique designs made by
+            TJM Creative Design.
+        </p>
+
+        <a class="button primary" href="#products">
+            Explore Our Creations
+        </a>
+
+        <a class="button secondary" href="#contact">
+            Custom Orders
+        </a>
+
+    </div>
+</div>
+
+<section id="products">
+
+    <div class="section-title">
+        <h2>What We Make</h2>
+        <p>Designed and created with personality.</p>
+    </div>
+
+    <div class="products">
+
+        <div class="card">
+            <h3>💡 Custom Lightboxes</h3>
+            <p>
+                Personalised illuminated designs including football,
+                clubs, businesses and completely custom ideas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚽ Personalised Designs</h3>
+            <p>
+                Football benches, name designs, gifts and unique
+                personalised creations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🧩 Sensory & Fidgets</h3>
+            <p>
+                Clickers, spinners, infinity cubes and fun sensory
+                products in a range of colours.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✨ Signs & Gifts</h3>
+            <p>
+                Bedroom signs, caravan signs, personalised gifts
+                and one-off creations.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>About TJM</h2>
+    </div>
+
+    <p>
+        TJM Creative Design is a small independent 3D printing
+        business specialising in personalised products and custom
+        designs.
+    </p>
+
+    <p>
+        From an idea or even a simple message, we can work with you
+        to turn your concept into something unique.
+    </p>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h2>Got an idea?</h2>
+
+    <p>
+        Tell us what you'd like and let's see what we can create.
+    </p>
+
+    <a class="button primary"
+       href="https://wa.me/447462780477">
+       WhatsApp TJM
+    </a>
+
+    <a class="button secondary"
+       href="https://www.facebook.com/profile.php?id=61581010230953">
+       Facebook
+    </a>
+
+</section>
+
+<footer>
+    © 2026 TJM Creative Design • Bringing Ideas to Life
+</footer>
+
+</body>
+</html>
